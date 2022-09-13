@@ -1,3 +1,39 @@
-h3 {
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 85%;
+    background: black;
+    position: relative;
+}
+
+.main-container > .slide {
+    position: absolute;
+    background: white;
+    width: 60%;
+    height: 70%;
+    opacity: 0;
+    
+}
+
+img {
+    width: 70%;
+}
+
+.slide.visible {
+    opacity: 1;
 }
