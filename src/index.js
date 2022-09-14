@@ -16,20 +16,14 @@ buttons.forEach(button => {
         slides.forEach((slide, index) => {
             if (slide.dataset.visibility === 'true') {
                 currentSlideIndex = index;
-                console.log(currentSlideIndex);
                 slide.dataset.visibility === 'false';
             }
+            slide.dataset.visibility = 'false';
         });
-        const newSlideIndex = currentSlideIndex + offset;
-        console.log(newSlideIndex);
+
+        let newSlideIndex = currentSlideIndex + offset;
+        if (newSlideIndex < 0) newSlideIndex = slides.length-1;
+        if (newSlideIndex > slides.length-1) newSlideIndex = 0;
         slides[newSlideIndex].dataset.visibility = 'true';
     });
 });
-
-// slides.forEach(slide => {
-//     slide.classList.remove('visible');
-//     if (slide.dataset.visibility === 'true') {
-//         slide.classList.add('visible');
-//     }
-// });
-

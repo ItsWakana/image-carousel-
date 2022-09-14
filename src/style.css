@@ -27,6 +27,7 @@ body {
     width: 60%;
     height: 70%;
     opacity: 0;
+    transition: opacity 1s ease-in-out;
     
 }
 
@@ -36,10 +37,7 @@ img {
     object-fit: cover;
 }
 
-/* .slide.visible {
-    opacity: 1;
-} */
-
 .slide[data-visibility="true"] {
     opacity: 1;
+    transition: 1s;
 }
