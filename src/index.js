@@ -4,42 +4,32 @@ import landscape2 from './assets/landscape2.jpg';
 import landscape3 from './assets/landscape3.jpg';
 
 const container = document.querySelector('.main-container');
-const next = document.querySelector('.next');
-const previous = document.querySelector('previous');
-
-// function generateImage(imageSource) {
-//     const slide = document.createElement('div');
-//     slide.classList.add('slide');
-
-//     const img = document.createElement('img');
-//     img.src = imageSource;
-
-//     slide.appendChild(img);
-
-//     return slide; 
-// }
-
-// container.appendChild(generateImage(landscape2));
-// container.appendChild(generateImage(landscape1));
+const buttons = document.querySelectorAll('.carousel-button');
 
 const slides = [...document.querySelectorAll('.slide')];
 
-slides.forEach(slide => {
-    slide.classList.remove('visible');
-    if (slide.dataset.visibility === 'true') {
-        slide.classList.add('visible');
-    }
-});
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
+        let currentSlideIndex;
 
-next.addEventListener('click', () => {
-    slides.forEach(slide => {
-        
+        slides.forEach((slide, index) => {
+            if (slide.dataset.visibility === 'true') {
+                currentSlideIndex = index;
+                console.log(currentSlideIndex);
+                slide.dataset.visibility === 'false';
+            }
+        });
+        const newSlideIndex = currentSlideIndex + offset;
+        console.log(newSlideIndex);
+        slides[newSlideIndex].dataset.visibility = 'true';
     });
 });
 
-function clearChildElements(element) {
+// slides.forEach(slide => {
+//     slide.classList.remove('visible');
+//     if (slide.dataset.visibility === 'true') {
+//         slide.classList.add('visible');
+//     }
+// });
 
-    while (element.hasChildNodes()) {
-        element.removeChild(element.lastChild);
-    }
-}
