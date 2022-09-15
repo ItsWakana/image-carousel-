@@ -25,3 +25,20 @@ export function specificSlide(imageSlides, i) {
     let newSlideIndex = i;
     imageSlides[i].dataset.visibility = 'true';
 }
+
+export function createCircles(container, slides) {
+
+    const circleContainer = document.createElement('div');
+    circleContainer.className = 'dots';
+
+    for (let i=0; i<slides.length; i++) {
+        const circle = document.createElement('div');
+        circle.className = 'dot';
+        circle.dataset.selected = 'false';
+        if (i === 1) circle.dataset.selected = 'true';
+        circleContainer.appendChild(circle);
+        
+    }
+
+    container.appendChild(circleContainer);
+}

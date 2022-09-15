@@ -4,11 +4,15 @@ import landscape2 from './assets/landscape2.jpg';
 import landscape3 from './assets/landscape3.jpg';
 import arrow from './assets/arrow.svg';
 
-import { changeSlide, specificSlide } from './utilities';
+import { changeSlide, createCircles, specificSlide } from './utilities';
 
+const container = document.querySelector('.main-container');
 const buttons = document.querySelectorAll('[data-carousel-button]');
 const slides = [...document.querySelectorAll('.slide')];
+
+createCircles(container, slides);
 const circles = [...document.querySelectorAll('.dot')];
+
 
 circles.forEach((circle, index) => {
     circle.addEventListener('click', () => {
@@ -26,6 +30,5 @@ buttons.forEach(button => {
         changeSlide(offset, slides, circles);
     });
 });
-const offset = 1;
-setInterval(() => { changeSlide(offset, slides, circles) }, 5000);
+setInterval(() => { changeSlide(1, slides, circles) }, 5000);
 
