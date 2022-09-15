@@ -62,17 +62,26 @@ img {
 .dots {
     display: flex;
     gap: 25px;
+    align-self: flex-end;
+    margin-bottom: 50px;
     position: absolute;
 
 }
 .dots > .dot {
-    background: red;
-    width: 20px;
-    height: 20px;
+    background: white;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.dots > .dot[data-selected="true"] {
-    border: solid 2px white;
+.dots > .dot[data-selected="true"]::after {
+    content: '';
+    background: black;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
 }
