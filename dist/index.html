@@ -9,11 +9,22 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="slide" data-slide="1" data-visibility="true"><img src="landscape1.jpg"></div>
-        <div class="slide" data-slide="2" data-visibility="false"><img src="landscape2.jpg"></div>
-        <div class="slide" data-slide="3" data-visibility="false"><img src="landscape3.jpg"></div>
+        <div class="slide" data-visibility="true"><img src="landscape1.jpg"></div>
+        <div class="slide" data-visibility="false"><img src="landscape2.jpg"></div>
+        <div class="slide" data-visibility="false"><img src="landscape3.jpg"></div>
+        <div class="arrows">
+            <img src="arrow.svg" class="left-arrow" data-carousel-button="prev">
+            <img src="arrow.svg" class="right-arrow" data-carousel-button="next">
+        </div>
+
+        <div class="dots">
+            <div class="dot" data-selected="true"></div>
+            <div class="dot" data-selected="false"></div>
+            <div class="dot" data-selected="false"></div>
+        </div>
+
+
     </div>
-    <button class="carousel-button" data-carousel-button="prev">Previous</button>
-    <button class="carousel-button" data-carousel-button="next">Next</button>
+
 </body>
 </html>

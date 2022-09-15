@@ -15,19 +15,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     background: black;
     position: relative;
 }
 
 .main-container > .slide {
     position: absolute;
-    background: white;
-    width: 60%;
-    height: 70%;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.3s ease-in-out;
     
 }
 
@@ -39,5 +39,40 @@ img {
 
 .slide[data-visibility="true"] {
     opacity: 1;
-    transition: 1s;
+    transition: 1.3s;
+}
+
+.arrows {
+    display:flex;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+.left-arrow,
+.right-arrow {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(292deg) brightness(101%) contrast(102%);
+    width: 5%;
+    height: auto;
+    cursor: pointer;
+}
+
+.right-arrow {
+    transform: rotate(180deg);
+}
+
+.dots {
+    display: flex;
+    gap: 25px;
+    position: absolute;
+
+}
+.dots > .dot {
+    background: red;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dots > .dot[data-selected="true"] {
+    border: solid 2px white;
 }
