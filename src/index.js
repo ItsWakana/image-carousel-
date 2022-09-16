@@ -1,7 +1,7 @@
 import './style.css';
-import landscape1 from './assets/landscape1.jpg';
-import landscape2 from './assets/landscape2.jpg';
-import landscape3 from './assets/landscape3.jpg';
+// import landscape1 from './assets/landscape1.jpg';
+// import landscape2 from './assets/landscape2.jpg';
+// import landscape3 from './assets/landscape3.jpg';
 import arrow from './assets/arrow.svg';
 
 import { changeSlide, createCircles, specificSlide } from './utilities';
